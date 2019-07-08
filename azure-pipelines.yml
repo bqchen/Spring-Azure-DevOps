@@ -22,8 +22,8 @@ steps:
   - script: |
       curl -sL https://github.com/buildpack/pack/releases/download/v0.2.1/pack-v0.2.1-linux.tgz | tar zxf -
       mv pack /bin
-      docker login -u menxiao -p "${pswd}"
-      pack build --builder cloudfoundry/cnb:bionic --publish menxiao/sample-java-app
+      docker login -u normanch -p "${pswd}"
+      pack build --builder cloudfoundry/cnb:bionic --publish normanch/demo-springcloud-app
     env:
       pswd: $(dockerPassword)
   - script: |
