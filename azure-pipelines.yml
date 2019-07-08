@@ -1,0 +1,30 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+# cannot extract pack cache, as it's using a named volume
+
+variables:
+  ArtifactFeed: 6ebc2d9e-a94e-416e-b463-fea4fdb4ffb8
+
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: |
+      echo "Spring-Azure-DevOps" >.cache-key
+  - script: |
+      ls -al
+  - script: |
+      curl -sL https://github.com/buildpack/pack/releases/download/v0.2.1/pack-v0.2.1-linux.tgz | tar zxf -
+      mv pack /bin
+      docker login -u normanch -p "${pswd}"
+      pack build --builder cloudfoundry/cnb:bionic --publish normanch/demo-springcloud-app
+    env:
+      pswd: $(dockerPassword)
+  - script: |
+      ls -al
