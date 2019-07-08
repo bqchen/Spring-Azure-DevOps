@@ -10,7 +10,7 @@ public class HelloController {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/hi")
     public String home() {
         return "Welcome! I am from port " + port;
     }
