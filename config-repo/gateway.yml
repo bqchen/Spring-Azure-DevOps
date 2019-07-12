@@ -21,7 +21,7 @@ spring:
           lowerCaseServiceId: true
       routes:
         - id: app-service
-          uri: lb://app-service
+          uri: lb://home
           predicates:
             - Path=/home
 #          filters:
