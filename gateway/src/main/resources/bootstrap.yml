@@ -7,6 +7,18 @@ spring:
   application:
     name: gateway
   cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      routes:
+        - id: app-service
+          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
+          predicates:
+            - Path=/**
+          filters:
+            - StripPrefix=1
     config:
       uri: http://config:8888
       fail-fast: true
