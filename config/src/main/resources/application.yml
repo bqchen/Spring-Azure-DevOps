@@ -1,0 +1,27 @@
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: registry
+    prefer-ip-address: true
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@${eureka.instance.hostname}:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/bqchen/Spring-Azure-DevOps/
+          search-paths: config-repo
+  security:
+    user:
+      name: user
+      password: ${CONFIG_SERVER_PASSWORD:password}
