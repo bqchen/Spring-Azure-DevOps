@@ -1,24 +1,30 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+  instance:
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
 server:
   port: 8070
 
-msg: Hello
+#msg: Hello
 
 name: beiqing
 
-eureka:
-  instance:
-    metadata-map:
-      user.name: ${security.user.name}
-      user.password: ${security.user.password}
+spring:
+  security:
+    user:
+      name: user
+      password: password
+#    oauth2:
+#      client:
+#        clientId: app-service
+#        clientSecret: ${security.user.password}
+#        accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+#        grant-type: client_credentials
+#        scope: server
 
-security:
-  user:
-    name: user
-    password: password
-  oauth2:
-    client:
-      clientId: app-service
-      clientSecret: ${security.user.password}
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
-      grant-type: client_credentials
-      scope: server
+

@@ -1,17 +1,36 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+test:
+  uri: lb://app-service
+
 server:
   port: 8060
 
-management:
-  security:
-    enabled: false
+#management:
+#  security:
+#    enabled: false
 
-ribbon:
-  ReadTimeout: 10000
-  ConnectTimeout: 10000
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: route_app_service
+          uri: ${test.uri}
+          predicates:
+            - Path=/home/**
+#          filters:
+#            - StripPrefix=1
 
-zuul:
-  ignoredServices: '*'
-  routes:
-    app-service:
-      path: /svc/**
-      sensitiveHeaders:
+
+
+#zuul:
+#  ignoredServices: '*'
+#  routes:
+#    app-service:
+#      path: /svc/**
+#      sensitiveHeaders:

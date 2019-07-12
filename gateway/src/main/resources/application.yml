@@ -1,7 +1,7 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
 
 spring:
   application:
