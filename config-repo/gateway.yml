@@ -12,10 +12,6 @@ ribbon:
 zuul:
   ignoredServices: '*'
   routes:
-    auth-service:
-      path: /uaa/**
-      stripPrefix: false
-      sensitiveHeaders:
     app-service:
       path: /svc/**
       sensitiveHeaders:

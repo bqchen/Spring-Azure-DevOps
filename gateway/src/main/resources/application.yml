@@ -1,3 +1,8 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+
 spring:
   application:
     name: gateway
@@ -12,3 +17,4 @@ spring:
         max-interval: 10000
         multiplier: 2
         max-attempts: 10
+
