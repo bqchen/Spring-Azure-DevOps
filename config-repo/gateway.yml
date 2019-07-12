@@ -17,7 +17,7 @@ spring:
     gateway:
       routes:
         - id: app-service
-          uri: lb://app-service
+          uri: lb://app-service/home
           predicates:
             - Path=/**
 #          filters:
