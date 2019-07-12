@@ -5,9 +5,6 @@ eureka:
   instance:
     prefer-ip-address: true
 
-test:
-  uri: lb://app-service
-
 server:
   port: 8060
 
@@ -19,10 +16,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: route_app_service
-          uri: ${test.uri}
+        - id: app-service
+          uri: lb://app-service
           predicates:
-            - Path=/home/**
+            - Path=/**
 #          filters:
 #            - StripPrefix=1
 

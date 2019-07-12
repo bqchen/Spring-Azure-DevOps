@@ -14,13 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 import java.util.List;
 
-@RequestMapping("/home")
 @RefreshScope
 @RestController
 public class AppServiceController {
 
-    @RequestMapping("info")
-    public String homeInfo() {
+    @RequestMapping("/home")
+    public String home() {
         return "Welcome to the Spring Cloud Azure DevOps World!";
     }
 
