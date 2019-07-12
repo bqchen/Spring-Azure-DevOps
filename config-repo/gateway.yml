@@ -8,10 +8,6 @@ eureka:
 server:
   port: 8060
 
-#management:
-#  security:
-#    enabled: false
-
 spring:
   cloud:
     gateway:
@@ -24,23 +20,3 @@ spring:
           uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@localhost:8070/home
           predicates:
             - Path=/home
-#          filters:
-#            - StripPrefix=1
-#  cloud:
-#    gateway:
-#      routes:
-#        - id: app-service
-#          uri: lb://app-service
-#          predicates:
-#            - Path=/**
-#          filters:
-#            - StripPrefix=1
-
-
-
-#zuul:
-#  ignoredServices: '*'
-#  routes:
-#    app-service:
-#      path: /svc/**
-#      sensitiveHeaders:

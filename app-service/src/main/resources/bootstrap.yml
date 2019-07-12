@@ -8,12 +8,7 @@ spring:
       username: user
       password: ${CONFIG_SERVER_PASSWORD:password}
       retry:
-        initial-interval: 2000
-        max-interval: 10000
+        initial-interval: 5000
+        max-interval: 100000
         multiplier: 2
-        max-attempts: 10
-
-#eureka:
-#  client:
-#    register-with-eureka: false
-#    fetch-registry: false
+        max-attempts: 50
