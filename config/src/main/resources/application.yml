@@ -19,7 +19,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/bqchen/Spring-Azure-DevOps/
+          uri: https://github.com/bqchen/Spring-Azure-DevOps
           search-paths: config-repo
   security:
     user:
