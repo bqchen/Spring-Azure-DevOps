@@ -24,8 +24,8 @@ spring:
           uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
           predicates:
             - Path=/**
-          filters:
-            - StripPrefix=1
+#          filters:
+#            - StripPrefix=1
 #  cloud:
 #    gateway:
 #      routes:
