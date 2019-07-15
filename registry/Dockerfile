@@ -1,7 +1,7 @@
-FROM java:8-jre
+FROM java:8
 MAINTAINER Beiqing Chen
 
 ADD ./target/registry-1.0-SNAPSHOT.jar /app/registry.jar
 CMD ["java", "-Xmx200m", "-jar", "/app/registry.jar"]
 
-EXPOSE 4000
+EXPOSE 8761
