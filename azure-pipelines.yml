@@ -18,7 +18,12 @@ steps:
   - script: |
       ls -al
   - script: |
-      mvn clean package -DskipTests
+      cd ./app-service
+      ls -al
+  - script: |
+      cd ./target
+      ls -al
+    #   mvn clean package -DskipTests
   - script: |
       ls -al
   - script: |
