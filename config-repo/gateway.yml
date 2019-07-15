@@ -18,6 +18,6 @@ spring:
       routes:
         - id: app-service
 #          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@localhost:8070/home
-          uri: lb://app-service
+#          uri: lb://app-service
           predicates:
             - Path=/home
