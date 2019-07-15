@@ -28,27 +28,26 @@ steps:
   - script: |
       cd ./app-service
       ls -al
-  - script: |
       docker build -t normanch/app-service .
-  - script: |
-      cd ../config
-      ls -al
-  - script: |
-      docker build -t normanch/config .
-  - script: |
-      cd ../gateway
-      ls -al
-  - script: |
-      docker build -t normanch/gateway .
-  - script: |
-      cd ../registry
-      ls -al
-  - script: |
-      docker build -t normanch/registry .
-  - script: |
-      docker push normanch/app-service:latest
-      docker push normanch/config:latest
-      docker push normanch/gateway:latest
-      docker push normanch/registry:latest
-  - script: |
-      docker images
+#   - script: |
+#       cd ../config
+#       ls -al
+#   - script: |
+#       docker build -t normanch/config .
+#   - script: |
+#       cd ../gateway
+#       ls -al
+#   - script: |
+#       docker build -t normanch/gateway .
+#   - script: |
+#       cd ../registry
+#       ls -al
+#   - script: |
+#       docker build -t normanch/registry .
+#   - script: |
+#       docker push normanch/app-service:latest
+#       docker push normanch/config:latest
+#       docker push normanch/gateway:latest
+#       docker push normanch/registry:latest
+#   - script: |
+#       docker images
