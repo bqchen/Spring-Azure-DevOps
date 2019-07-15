@@ -26,13 +26,13 @@ steps:
     env:
       pswd: $(dockerPassword)
   - script: |
-      docker build -t normanch/app-service -f /app-service/Dockerfile .
+      docker build -t normanch/app-service -f ./app-service/Dockerfile .
   - script: |
-      docker build -t normanch/config -f /config/Dockerfile .
+      docker build -t normanch/config -f ./config/Dockerfile .
   - script: |
-      docker build -t normanch/gateway -f /gateway/Dockerfile .
+      docker build -t normanch/gateway -f ./gateway/Dockerfile .
   - script: |
-      docker build -t normanch/registry -f /registry/Dockerfile .
+      docker build -t normanch/registry -f ./registry/Dockerfile .
   - script: |
       docker push normanch/app-service:latest
       docker push normanch/config:latest
