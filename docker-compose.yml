@@ -1,16 +1,18 @@
-version: '1'
+version: '2'
 services:
   registry:
-    image: Spring-Azure-DevOps/registry
+    image: normanch/registry
     ports:
       - "8761:8761"
   config:
-    image: Spring-Azure-DevOps/config
+    image: normanch/config
     ports:
       - "8888:8888"
   gateway:
-    image: Spring-Azure-DevOps/gateway
+    image: normanch/gateway
     ports:
       - "8060:8060"
   app-service:
-    image: Spring-Azure-DevOps/app-service
+    image: normanch/app-service
+    ports:
+      - "8070:8070"
