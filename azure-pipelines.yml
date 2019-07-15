@@ -30,15 +30,15 @@ steps:
       ls -al
       docker build -t normanch/app-service .
   - script: |
-      cd ../config
+      cd ./config
       ls -al
       docker build -t normanch/config .
   - script: |
-      cd ../gateway
+      cd ./gateway
       ls -al
       docker build -t normanch/gateway .
   - script: |
-      cd ../registry
+      cd ./registry
       ls -al
       docker build -t normanch/registry .
   - script: |
