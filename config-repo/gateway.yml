@@ -24,8 +24,8 @@ zuul:
     app-service:
       path: /app-service/**
       serviceId: app-service
-      stripPrefix: false
-      sensitiveHeaders:
+#      stripPrefix: false
+#      sensitiveHeaders:
 
 #spring:
 #  cloud:
