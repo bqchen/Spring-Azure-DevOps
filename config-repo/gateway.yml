@@ -10,16 +10,16 @@ server:
 
 zuul:
   ignoredServices: '*'
-    host:
-      connect-timeout-millis: 20000
-      socket-timeout-millis: 20000
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
 
-    routes:
-      app-service:
-        path: /app-service/**
-        serviceId: app-service
-        stripPrefix: false
-        sensitiveHeaders:
+  routes:
+    app-service:
+      path: /app-service/**
+      serviceId: app-service
+      stripPrefix: false
+      sensitiveHeaders:
 
 #spring:
 #  cloud:
