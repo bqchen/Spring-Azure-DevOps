@@ -11,6 +11,8 @@ server:
 ribbon:
   ReadTimeout: 20000
   ConnectTimeout: 20000
+  eureka:
+    enable: true
 
 zuul:
   ignoredServices: '*'
