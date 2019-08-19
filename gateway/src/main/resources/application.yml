@@ -1,0 +1,25 @@
+server:
+  port: 8060
+
+eureka:
+ client:
+   service-url:
+     defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+ instance:
+   prefer-ip-address: true
+#
+#ribbon:
+#  ReadTimeout: 20000
+#  ConnectTimeout: 20000
+#  eureka:
+#    enabled: true
+#
+#zuul:
+#  ignoredServices: '*'
+#  host:
+#    connect-timeout-millis: 20000
+#    socket-timeout-millis: 20000
+#  routes:
+#    app-service:
+#      path: /app-service/**
+#      serviceId: app-service

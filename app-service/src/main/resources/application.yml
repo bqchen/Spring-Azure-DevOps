@@ -1,0 +1,18 @@
+server:
+  port: 8070
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+  instance:
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+#
+#spring:
+#  security:
+#    user:
+#      name: user
+#      password: password
+#
